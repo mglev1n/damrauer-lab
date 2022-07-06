@@ -253,39 +253,39 @@ Some other LSF commands can be found [here](https://www.med.upenn.edu/hpc/assets
    This is a perfect scenario for subitting an array job! The array index is saved into a variable called `LSB_JOBINDEX`. Say you want to run `bcftools norm` for 3 chromosomes with in files named `chr1.vcf`, `chr2.vcf`, and `chrX.vcf`. You could make the following changes to your script
   
   ```bash
-   #!/bin/bash
-   #BSUB -J jobname[1-3]
-   #other BSUB options as normal
-
-   #job commands
-   myArray=("1" "2" "X") 
-   myValue="${myArray[${LSB_JOBINDEX} - 1]}"  # to access each element in the array
-   bcftools norm -m -any /path/to/file/chr${myValue}.vcf -Ou | bcftools view -Q 0.05:minor -c 20:minor -Ov > chr${myValue}"_norm.vcf"
-   ```
+  #!/bin/bash
+  #BSUB -J jobname[1-3]
+  #other BSUB options as normal
+  
+  #job commands
+  myArray=("1" "2" "X") 
+  myValue="${myArray[${LSB_JOBINDEX} - 1]}"  # to access each element in the array
+  bcftools norm -m -any /path/to/file/chr${myValue}.vcf -Ou | bcftools view -Q 0.05:minor -c 20:minor -Ov > chr${myValue}"_norm.vcf"
+  ```
 
    If all of your chromosome file names contain integers, you could even simplify this to just using the `LSB_JOBINDEX` variable directly like
    
-   ```bash
-   #!/bin/bash
-   #BSUB -J jobname[1-22]
-   #other BSUB options as normal
-
-   #job commands
-   bcftools norm -m -any /path/to/file/chr${LSB_JOBINDEX}.vcf -Ou | bcftools view -Q 0.05:minor -c 20:minor -Ov > chr${LSB_JOBINDEX}"_norm.vcf"
-   ```
+  ```bash
+  #!/bin/bash
+  #BSUB -J jobname[1-22]
+  #other BSUB options as normal
+  
+  #job commands
+  bcftools norm -m -any /path/to/file/chr${LSB_JOBINDEX}.vcf -Ou | bcftools view -Q 0.05:minor -c 20:minor -Ov > chr${LSB_JOBINDEX}"_norm.vcf"
+  ```
    
 
    Another tip is that you can also use a command to get the array. For example if you have a list of chr files called `chr1.vcf` etc., you can do something like      
 
   ```bash
-     #!/bin/bash
-     #BSUB -J jobname[1-3]
-     #other BSUB options as normal
+  #!/bin/bash
+  #BSUB -J jobname[1-3]
+  #other BSUB options as normal
   
-     #job commands
-     myArray=(`ls -1 /path/to/input/files/chr*vcf`) # you can chain sed, cut, etc. commands here using pipes if you want to format the values in the array!
-     myValue="${myArray[${LSB_JOBINDEX} - 1]}" 
-     bcftools norm -m -any ${myValue} -Ou | bcftools view -Q 0.05:minor -c 20:minor -Ov > ${myValue}".norm.vcf"
+  #job commands
+  myArray=(`ls -1 /path/to/input/files/chr*vcf`) # you can chain sed, cut, etc. commands here using pipes if you want to format the values in the array!
+  myValue="${myArray[${LSB_JOBINDEX} - 1]}" 
+  bcftools norm -m -any ${myValue} -Ou | bcftools view -Q 0.05:minor -c 20:minor -Ov > ${myValue}".norm.vcf"
   ```
 
 - **My job finished but it didn't output anything. What happened?**
