@@ -10,7 +10,11 @@ website:
     style: "docked"
     tools:
       - icon: github
-        url:  https://github.com/mglev1n/damrauer-lab
+        menu:
+          - text: Source Code
+            url:  https://github.com/mglev1n/damrauer-lab
+          - text: Report a Bug
+            url:  http://github.com/mglev1n/damrauer-lab/issues/new
     contents:
       - href: "index.qmd"
       - section: "Getting Started"
