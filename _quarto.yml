@@ -1,0 +1,26 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Damrauer Lab"
+  page-navigation: true
+  sidebar:
+    search: true
+    style: "docked"
+    tools:
+      - icon: github
+        url:  https://github.com/mglev1n/damrauer-lab
+    contents:
+      - href: "index.qmd"
+      - section: "Getting Started"
+        contents:
+        - href: "lpc.qmd"
+        - href: "rstudio.qmd"
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+

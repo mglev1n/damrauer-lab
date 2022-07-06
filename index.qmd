@@ -1,0 +1,5 @@
+---
+title: "Damrauer Lab Overview"
+---
+
+This internal website for the Damrauer Lab at the University of Pennsylvania serves to coordinate and document common logistic and computational topics. This effort depends on contributions from users, so if you have edits to suggest, or documentation requests, please submit an [Issue](http://github.com/mglev1n/damrauer-lab/issues) or [Pull Request](http://github.com/mglev1n/damrauer-lab/pulls). This effort is inspired in part by [PennLINC](https://pennlinc.github.io/).
