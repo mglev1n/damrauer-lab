@@ -35,7 +35,7 @@ When finished using RStudio Server, terminate the job:
 1. Exit the RStudio Session (power button in the top right corner of the RStudio window)
 2. Issue the following command on the login node (scisub7.pmacs.upenn.edu):
 
-    bkill jobid 
+    bkill jobid
 ```
 
 ## Package Management
@@ -43,6 +43,7 @@ The default RStudio container includes RStudio Server, Bioconductor, Tidyverse, 
 
 ## Links and Resources
 
+- [RStudio Education](https://education.rstudio.com/learn/beginner/)
 - [R for Data Science](https://r4ds.had.co.nz/)
 - [Introduction to Data Science](https://rafalab.github.io/dsbook/)
 

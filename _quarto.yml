@@ -21,6 +21,10 @@ website:
         contents:
         - href: "lpc.qmd"
         - href: "rstudio.qmd"
+  repo-url: https://github.com/mglev1n/damrauer-lab
+  repo-subdir: "docs"
+  repo-branch: "master"
+  repo-actions: [edit, issue]
 format:
   html:
     theme: cosmo
