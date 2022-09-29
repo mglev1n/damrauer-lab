@@ -1,5 +1,26 @@
 [
   {
+    "objectID": "tools.html",
+    "href": "tools.html",
+    "title": "Useful Tools/Functions",
+    "section": "",
+    "text": "METAL is an efficient tool for performing meta-analysis of genome-wide association studies.\n\n\n\nPlink is a useful toolkit for manipulating genomic data and performing genetic association studies.\n\n\n\nregenie is a useful program for efficiently performing both common- and rare-variant genetic association studies using biobank-scale data.\n\n\n\nSAIGE is a computationally efficient tool for performing biobank-scale genetic association studies, using generalized mixed models to account for relatedness/population stratification. SAIGE-GENE+ can be used for performing rare variant association studies."
+  },
+  {
+    "objectID": "tools.html#useful-r-packages",
+    "href": "tools.html#useful-r-packages",
+    "title": "Useful Tools/Functions",
+    "section": "Useful R Packages",
+    "text": "Useful R Packages\n\narrow\nThe arrow package is a cross-language platform for reading/writing data. This package can read/write from several formats including parquet, feather, csv, and tsv, as well as cloud-storage like Amazon S3. Parquet in particular is a highly efficient columnar data format. arrow enables users to rapidly query massive datasets (potentially spread across multiple files) that are larger-than-memory.\n\n\ndata.table\nThe data.table package is a high-performance package for reading and manipulating data.frames. The syntax can be confusing at first, but enables efficient manipulation of large dataframes.\n\n\ndtplyr\nThe dtplyr package allows users to use data.table as a backend for dplyr. This combination of tools allows the user to specify dataframe manipulations using the convenient dplyr syntax, while taking advantage of the efficiency of data.table.\n\n\nGenomicSEM\nThe GenomicSEM package allows users to perform several tasks, including:\n\nMultivariate LD-score regression\nCreate structural equation models using GWAS summary statistics\nConduct multi-trait/multivariate GWAS\n\n\n\nGWASinspector\nThe GWASinspector package is useful for performing quality control of genome-wide association studies before performing meta-analysis. The package takes a set of input GWAS and returns a set of cleaned/harmonized files ready for meta-analysis.\n\n\nieugwasr\nThe ieugwasr package allows users to query the MRC-IEU OpenGWAS Project.\n\n\nlocusplotr\nThe locusplotr package allows users to query the University of Michigan LocusZoom API to create regional association plots from GWAS summary statistics.\n\n\npatchwork\nThe patchwork package allows users to combine multiple ggplots into a single graphic. This is useful for generating figures for manuscripts.\n\n\ntidyverse\nThe tidyverse is a suite of packages that are generally useful for data science, and includes packages for:\n\ndplyr - Manipulating data\nggplot2 - Plotting data\ntidyr - Tidying data\nreadr - Read rectangular data (.csv, .tsv, etc.)\n\n\n\nTwoSampleMR\nThe TwoSampleMR package from the MRC-IEU provides tools for performing Mendelian randomization, including:\n\nQuerying the MRC-IEU OpenGWAS Project\nPerforming two-sample Mendelian Randomziation\nPerforming MR sensitivity analyses\nClumping variants based on linkage disequilibrium and p-value"
+  },
+  {
+    "objectID": "tools.html#useful-r-functions",
+    "href": "tools.html#useful-r-functions",
+    "title": "Useful Tools/Functions",
+    "section": "Useful R Functions",
+    "text": "Useful R Functions\n\nliftover_gwas()\nThe liftover_gwas() function from the GwasDataImport package is a wrapper for the rtracklayer::liftOver() function. liftover_gwas() can be used to convert genomic positions from an arbitrary dataframe containing columns for chromosome and position.\n\n\nphewas()\nThe phewas() function from the ieugwasr can be used to perform a phenome-wide association study for a genetic variant of interest across studies cataloged in the MRC-IEU OpenGWAS Project."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Overview",

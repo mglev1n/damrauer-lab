@@ -23,6 +23,7 @@ website:
         contents:
         - href: "lpc.qmd"
         - href: "rstudio.qmd"
+        - href: "tools.qmd"
   repo-url: https://github.com/mglev1n/damrauer-lab
   repo-subdir: "docs"
   repo-branch: "master"
