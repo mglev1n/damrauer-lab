@@ -206,11 +206,12 @@ When finished using RStudio Server, terminate the job:
 <ol type="1">
 <li><p>Start an interactive session: <code>bsub -q damrauer_interactive -Is bash</code></p></li>
 <li><p>Load the singularity module: <code>module load singularity</code></p></li>
-<li><p>Use the <code>singularity pull</code> command to download the image from the Github Container Repository: <code>singularity pull oras://ghcr.io/mglev1n/bioconductor-tidyverse:singularity-latest</code></p></li>
-</ol>
-<p>The <code>singularity pull</code> command can more broadly be used to download docker images and convert them to singularity containers: <code>singularity pull docker://ghcr.io/rocker-org/tidyverse:latest</code></p>
-<ol type="1">
-<li>Exit the interactive session using <code>exit</code></li>
+<li><p>Use the <code>singularity pull</code> command to download the image:</p>
+<ul>
+<li><p>The default lab image can be found on the Github Container Repository: <code>singularity pull oras://ghcr.io/mglev1n/bioconductor-tidyverse:singularity-latest</code></p></li>
+<li><p>The <code>singularity pull</code> command can more broadly be used to download Docker/Singularity images from places like <a href="ghcr.io">ghcr.io</a> or <a href="https://hub.docker.com/">Docker Hub</a> and convert them to singularity containers: <code>singularity pull docker://ghcr.io/rocker-org/tidyverse:latest</code></p></li>
+</ul></li>
+<li><p>Exit the interactive session using <code>exit</code></p></li>
 </ol>
 </section>
 <section id="links-and-resources" class="level2">

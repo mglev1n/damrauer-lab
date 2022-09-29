@@ -49,9 +49,11 @@ The Singularity image containing the default RStudio container is located at [ht
 
 1. Load the singularity module: `module load singularity`
 
-1. Use the `singularity pull` command to download the image from the Github Container Repository: `singularity pull oras://ghcr.io/mglev1n/bioconductor-tidyverse:singularity-latest`
+1. Use the `singularity pull` command to download the image: 
 
-The `singularity pull` command can more broadly be used to download docker images and convert them to singularity containers: `singularity pull docker://ghcr.io/rocker-org/tidyverse:latest`
+    + The default lab image can be found on the Github Container Repository: `singularity pull oras://ghcr.io/mglev1n/bioconductor-tidyverse:singularity-latest`
+
+    + The `singularity pull` command can more broadly be used to download Docker/Singularity images from places like [ghcr.io](ghcr.io) or [Docker Hub](https://hub.docker.com/) and convert them to singularity containers: `singularity pull docker://ghcr.io/rocker-org/tidyverse:latest`
 
 1. Exit the interactive session using `exit`
 
