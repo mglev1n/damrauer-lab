@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.251">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Damrauer Lab - Useful Tools/Functions</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./rstudio.html" rel="prev">
+<link href="./favicon_io/apple-touch-icon.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Useful Tools/Functions</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Damrauer Lab</a> 
+        <div class="sidebar-tools-main">
+    <a href="" title="" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-github"></i></a>
+    <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
+        <li>
+          <a class="dropdown-item sidebar-tools-main-item" href="https://github.com/mglev1n/damrauer-lab">
+          Source Code
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item sidebar-tools-main-item" href="http://github.com/mglev1n/damrauer-lab/issues/new">
+          Report a Bug
+          </a>
+        </li>
+    </ul>
+</div>
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Overview</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Getting Started</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lpc.html" class="sidebar-item-text sidebar-link">LPC Overview</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./rstudio.html" class="sidebar-item-text sidebar-link">RStudio Overview</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tools.html" class="sidebar-item-text sidebar-link active">Useful Tools/Functions</a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#useful-tools" id="toc-useful-tools" class="nav-link active" data-scroll-target="#useful-tools">Useful Tools</a>
+  <ul class="collapse">
+  <li><a href="#metal" id="toc-metal" class="nav-link" data-scroll-target="#metal">METAL</a></li>
+  <li><a href="#plink" id="toc-plink" class="nav-link" data-scroll-target="#plink">Plink</a></li>
+  <li><a href="#regenie" id="toc-regenie" class="nav-link" data-scroll-target="#regenie">regenie</a></li>
+  <li><a href="#saigesaige-gene" id="toc-saigesaige-gene" class="nav-link" data-scroll-target="#saigesaige-gene">SAIGE/SAIGE-GENE+</a></li>
+  </ul></li>
+  <li><a href="#useful-r-packages" id="toc-useful-r-packages" class="nav-link" data-scroll-target="#useful-r-packages">Useful R Packages</a>
+  <ul class="collapse">
+  <li><a href="#arrow" id="toc-arrow" class="nav-link" data-scroll-target="#arrow">arrow</a></li>
+  <li><a href="#data.table" id="toc-data.table" class="nav-link" data-scroll-target="#data.table">data.table</a></li>
+  <li><a href="#dtplyr" id="toc-dtplyr" class="nav-link" data-scroll-target="#dtplyr">dtplyr</a></li>
+  <li><a href="#genomicsem" id="toc-genomicsem" class="nav-link" data-scroll-target="#genomicsem">GenomicSEM</a></li>
+  <li><a href="#gwasinspector" id="toc-gwasinspector" class="nav-link" data-scroll-target="#gwasinspector">GWASinspector</a></li>
+  <li><a href="#ieugwasr" id="toc-ieugwasr" class="nav-link" data-scroll-target="#ieugwasr">ieugwasr</a></li>
+  <li><a href="#locusplotr" id="toc-locusplotr" class="nav-link" data-scroll-target="#locusplotr">locusplotr</a></li>
+  <li><a href="#patchwork" id="toc-patchwork" class="nav-link" data-scroll-target="#patchwork">patchwork</a></li>
+  <li><a href="#tidyverse" id="toc-tidyverse" class="nav-link" data-scroll-target="#tidyverse">tidyverse</a></li>
+  <li><a href="#twosamplemr" id="toc-twosamplemr" class="nav-link" data-scroll-target="#twosamplemr">TwoSampleMR</a></li>
+  </ul></li>
+  <li><a href="#useful-r-functions" id="toc-useful-r-functions" class="nav-link" data-scroll-target="#useful-r-functions">Useful R Functions</a>
+  <ul class="collapse">
+  <li><a href="#liftover_gwas" id="toc-liftover_gwas" class="nav-link" data-scroll-target="#liftover_gwas">liftover_gwas()</a></li>
+  <li><a href="#phewas" id="toc-phewas" class="nav-link" data-scroll-target="#phewas">phewas()</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/mglev1n/damrauer-lab/edit/master/docs/tools.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/mglev1n/damrauer-lab/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Useful Tools/Functions</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<section id="useful-tools" class="level2">
+<h2 class="anchored" data-anchor-id="useful-tools">Useful Tools</h2>
+<section id="metal" class="level3">
+<h3 class="anchored" data-anchor-id="metal">METAL</h3>
+<p><a href="https://genome.sph.umich.edu/wiki/METAL_Documentation">METAL</a> is an efficient tool for performing meta-analysis of genome-wide association studies.</p>
+</section>
+<section id="plink" class="level3">
+<h3 class="anchored" data-anchor-id="plink">Plink</h3>
+<p><a href="https://www.cog-genomics.org/plink/2.0/">Plink</a> is a useful toolkit for manipulating genomic data and performing genetic association studies.</p>
+</section>
+<section id="regenie" class="level3">
+<h3 class="anchored" data-anchor-id="regenie">regenie</h3>
+<p><a href="https://rgcgithub.github.io/regenie/">regenie</a> is a useful program for efficiently performing both common- and rare-variant genetic association studies using biobank-scale data.</p>
+</section>
+<section id="saigesaige-gene" class="level3">
+<h3 class="anchored" data-anchor-id="saigesaige-gene">SAIGE/SAIGE-GENE+</h3>
+<p><a href="https://saigegit.github.io/SAIGE-doc/">SAIGE</a> is a computationally efficient tool for performing biobank-scale genetic association studies, using generalized mixed models to account for relatedness/population stratification. SAIGE-GENE+ can be used for performing rare variant association studies.</p>
+</section>
+</section>
+<section id="useful-r-packages" class="level2">
+<h2 class="anchored" data-anchor-id="useful-r-packages">Useful R Packages</h2>
+<section id="arrow" class="level3">
+<h3 class="anchored" data-anchor-id="arrow">arrow</h3>
+<p>The <a href="https://arrow.apache.org/docs/r/">arrow</a> package is a cross-language platform for reading/writing data. This package can read/write from several formats including parquet, feather, csv, and tsv, as well as cloud-storage like Amazon S3. Parquet in particular is a highly efficient columnar data format. <code>arrow</code> enables users to rapidly query massive datasets (potentially spread across multiple files) that are larger-than-memory.</p>
+</section>
+<section id="data.table" class="level3">
+<h3 class="anchored" data-anchor-id="data.table">data.table</h3>
+<p>The <a href="https://rdatatable.gitlab.io/data.table/">data.table</a> package is a high-performance package for reading and manipulating data.frames. The syntax can be confusing at first, but enables efficient manipulation of large dataframes.</p>
+</section>
+<section id="dtplyr" class="level3">
+<h3 class="anchored" data-anchor-id="dtplyr">dtplyr</h3>
+<p>The <a href="https://dtplyr.tidyverse.org/">dtplyr</a> package allows users to use <code>data.table</code> as a backend for <code>dplyr</code>. This combination of tools allows the user to specify dataframe manipulations using the convenient <code>dplyr</code> syntax, while taking advantage of the efficiency of <code>data.table</code>.</p>
+</section>
+<section id="genomicsem" class="level3">
+<h3 class="anchored" data-anchor-id="genomicsem">GenomicSEM</h3>
+<p>The <a href="https://github.com/GenomicSEM/GenomicSEM">GenomicSEM</a> package allows users to perform several tasks, including:</p>
+<ul>
+<li>Multivariate LD-score regression</li>
+<li>Create structural equation models using GWAS summary statistics</li>
+<li>Conduct multi-trait/multivariate GWAS</li>
+</ul>
+</section>
+<section id="gwasinspector" class="level3">
+<h3 class="anchored" data-anchor-id="gwasinspector">GWASinspector</h3>
+<p>The <a href="http://gwasinspector.com/">GWASinspector</a> package is useful for performing quality control of genome-wide association studies before performing meta-analysis. The package takes a set of input GWAS and returns a set of cleaned/harmonized files ready for meta-analysis.</p>
+</section>
+<section id="ieugwasr" class="level3">
+<h3 class="anchored" data-anchor-id="ieugwasr">ieugwasr</h3>
+<p>The <a href="https://mrcieu.github.io/ieugwasr/index.html">ieugwasr</a> package allows users to query the <a href="https://gwas.mrcieu.ac.uk/">MRC-IEU OpenGWAS Project</a>.</p>
+</section>
+<section id="locusplotr" class="level3">
+<h3 class="anchored" data-anchor-id="locusplotr">locusplotr</h3>
+<p>The <a href="https://mglev1n.github.io/locusplotr/">locusplotr</a> package allows users to query the University of Michigan LocusZoom API to create regional association plots from GWAS summary statistics.</p>
+</section>
+<section id="patchwork" class="level3">
+<h3 class="anchored" data-anchor-id="patchwork">patchwork</h3>
+<p>The <a href="https://patchwork.data-imaginist.com/">patchwork</a> package allows users to combine multiple ggplots into a single graphic. This is useful for generating figures for manuscripts.</p>
+</section>
+<section id="tidyverse" class="level3">
+<h3 class="anchored" data-anchor-id="tidyverse">tidyverse</h3>
+<p>The <a href="https://www.tidyverse.org/">tidyverse</a> is a suite of packages that are generally useful for data science, and includes packages for:</p>
+<ul>
+<li><strong>dplyr</strong> - Manipulating data</li>
+<li><strong>ggplot2</strong> - Plotting data</li>
+<li><strong>tidyr</strong> - Tidying data</li>
+<li><strong>readr</strong> - Read rectangular data (.csv, .tsv, etc.)</li>
+</ul>
+</section>
+<section id="twosamplemr" class="level3">
+<h3 class="anchored" data-anchor-id="twosamplemr">TwoSampleMR</h3>
+<p>The <a href="https://mrcieu.github.io/TwoSampleMR/index.html">TwoSampleMR</a> package from the MRC-IEU provides tools for performing Mendelian randomization, including:</p>
+<ul>
+<li>Querying the <a href="https://gwas.mrcieu.ac.uk/">MRC-IEU OpenGWAS Project</a></li>
+<li>Performing two-sample Mendelian Randomziation</li>
+<li>Performing MR sensitivity analyses</li>
+<li>Clumping variants based on linkage disequilibrium and p-value</li>
+</ul>
+</section>
+</section>
+<section id="useful-r-functions" class="level2">
+<h2 class="anchored" data-anchor-id="useful-r-functions">Useful R Functions</h2>
+<section id="liftover_gwas" class="level3">
+<h3 class="anchored" data-anchor-id="liftover_gwas">liftover_gwas()</h3>
+<p>The <code>liftover_gwas()</code> function from the <a href="https://mrcieu.github.io/GwasDataImport/index.html">GwasDataImport</a> package is a wrapper for the <code>rtracklayer::liftOver()</code> function. <code>liftover_gwas()</code> can be used to convert genomic positions from an arbitrary dataframe containing columns for chromosome and position.</p>
+</section>
+<section id="phewas" class="level3">
+<h3 class="anchored" data-anchor-id="phewas">phewas()</h3>
+<p>The <code>phewas()</code> function from the <a href="https://mrcieu.github.io/ieugwasr/index.html">ieugwasr</a> can be used to perform a phenome-wide association study for a genetic variant of interest across studies cataloged in the <a href="https://gwas.mrcieu.ac.uk/">MRC-IEU OpenGWAS Project</a>.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./rstudio.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">RStudio Overview</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
