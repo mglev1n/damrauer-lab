@@ -5,6 +5,7 @@ project:
 website:
   title: "Damrauer Lab"
   page-navigation: true
+  favicon: "favicon_io/apple-touch-icon.png"
   sidebar:
     search: true
     style: "docked"

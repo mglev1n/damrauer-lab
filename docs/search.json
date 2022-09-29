@@ -4,14 +4,21 @@
     "href": "index.html",
     "title": "Overview",
     "section": "",
-    "text": "Last Updated: 2022-07-06\nThis internal website for the Damrauer Lab at the University of Pennsylvania serves to coordinate and document common logistic and computational topics. This effort depends on contributions from users, so if you have edits to suggest, or documentation requests, please submit an Issue or Pull Request. This effort is inspired in part by PennLINC."
+    "text": "This internal website for the Damrauer Lab at the University of Pennsylvania serves to coordinate and document common logistic and computational topics. This effort depends on contributions from users, so if you have edits to suggest, or documentation requests, please submit an Issue or Pull Request. This effort is inspired in part by PennLINC."
   },
   {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
+    "text": "1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "lpc.html",
+    "href": "lpc.html",
+    "title": "LPC Overview",
+    "section": "",
+    "text": "The Damrauer Lab primarily uses the Penn LPC (Limited Performance Computing) environment for computing. This environment can be accessed from any computer on- or off-campus with the use of a VPN (virtual private network).\nThe overview below is adapted from the Moore lab and Ritchie lab."
   },
   {
     "objectID": "lpc.html#links-and-resources",
@@ -91,6 +98,13 @@
     "text": "Frequently Asked Questions\n\nMy jobs have been stuck in the queue with PENDING status forever and I need them to start running!\nUnfortunately, if many other people are also running jobs, you may just have to wait your turn. You can check how many jobs are waiting in our queues using the command bjobs -u \"all\" | grep \"damrauer\"\nHowever, even if there are many jobs waiting, there are some ways that you might be able to reduce how long your job sits in the queue. Sometime people will request much more memory, walltime, and/or nodes than the job actually needs to run. Your job cannot start until the resources you request are available, so the more you request, potentially the longer it could take to start. If you have ran a similar job before, check the resource usage to see the max memory and time it took to run. You may be able to reduce your current resource requests based on what you find. Also make sure that the program or function you are running is actually able to take advantage of multiple nodes. For example, requesting 16 nodes to run an Rscript that you haven’t parallized will reserve 15 extra nodes for nothing.\nRemember if you are running an analysis that requires a lot of resources, it’s a good idea to post in #support-lpc with a summary of your compute needs and time it will take to complete so that all lab members can know and plan accordingly and make sure there are no deadline conflicts.\nI calculated how long my jobs will take to run on LPC and it is months of compute time!\nYou may ask Scott about possibly moving your analysis, or a portion or your analysis, to DNAnexus or the HPC (High Performance Computing cluster). If you want to use these resources to run an analysis, generally you will need to do some cost scoping to have a rough idea of the total compute costs before you submit.\nHow can I run the same job on a bunch of different input files or with a bunch of different parameters without creating a bsub script for each one?\nThis is a perfect scenario for subitting an array job! The array index is saved into a variable called LSB_JOBINDEX. Say you want to run bcftools norm for 3 chromosomes with in files named chr1.vcf, chr2.vcf, and chrX.vcf. You could make the following changes to your script\n#!/bin/bash\n#BSUB -J jobname[1-3]\n#other BSUB options as normal\n\n#job commands\nmyArray=(\"1\" \"2\" \"X\") \nmyValue=\"${myArray[${LSB_JOBINDEX} - 1]}\"  # to access each element in the array\nbcftools norm -m -any /path/to/file/chr${myValue}.vcf -Ou | bcftools view -Q 0.05:minor -c 20:minor -Ov > chr${myValue}\"_norm.vcf\"\nIf all of your chromosome file names contain integers, you could even simplify this to just using the LSB_JOBINDEX variable directly like\n#!/bin/bash\n#BSUB -J jobname[1-22]\n#other BSUB options as normal\n\n#job commands\nbcftools norm -m -any /path/to/file/chr${LSB_JOBINDEX}.vcf -Ou | bcftools view -Q 0.05:minor -c 20:minor -Ov > chr${LSB_JOBINDEX}\"_norm.vcf\"\nAnother tip is that you can also use a command to get the array. For example if you have a list of chr files called chr1.vcf etc., you can do something like\n#!/bin/bash\n#BSUB -J jobname[1-3]\n#other BSUB options as normal\n\n#job commands\nmyArray=(`ls -1 /path/to/input/files/chr*vcf`) # you can chain sed, cut, etc. commands here using pipes if you want to format the values in the array!\nmyValue=\"${myArray[${LSB_JOBINDEX} - 1]}\" \nbcftools norm -m -any ${myValue} -Ou | bcftools view -Q 0.05:minor -c 20:minor -Ov > ${myValue}\".norm.vcf\"\nMy job finished but it didn’t output anything. What happened?\nFirst, make sure you have enabled the options to get a resource summary emailed to you and to output the .err file. Commonly a few things could have happened.\n\nThe job produced an error of some sort and you will need to fix your script.\nThe job ran out of walltime or memory. You can look at the resource usage e-mail to see if this happened.\nThe job ran fine, but there was no disk space to write the output file. If you didn’t get any errors and the resource usage looks fine, you can check which disk you were writing the output file to using pwd -P and how much space is left on the disk using df -h. If there is limited space, you may need to either temporarily direct your output to a scratch disk or work with other lab members to move files around.\n\nI can’t get my R package to install.\nThere are a number of reasons why this may happen. If you get an error such as ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for [] the issue may be as simple as quitting the R session, loading a module for the library that you are getting an error about, and restarting R. gcc, boost, mpfr, and mpc are common offenders.\nLPC is running very slowly!\nFirst, you might want to check with others in the lab to see if they are experiencing similar issues and it’s not just a glitch or momentary network problem. You might also want to have a look at the current running processes using top. If you or someone else is running a resource intensive process from the log in node, it might be best to kill the process and start an ibash session.\nI’m getting an error or have a problem that wasn’t mentioned here and I don’t know what it means or how to fix it.\nWell the first thing we usually want to do in this case is the classic Google/StackOverflow combination. Most of the time, you probably haven’t broken something beyond repair and instead just found a common bug that has already been solved by many other people on the internet.\nIf Google doesn’t work, you may want to search for keywords from your error in the lab’s Slack to see if any other lab members have come across the problem before. If you can’t find it, you can discuss with other lab members. It is great practice to post the full error message along with the line of code or command that you were running. If you have a problem with a script another lab member wrote for you, it’s also great to provide a small, reproducible example that they can run and try to troubleshoot.\nLastly, if you are having an issue with something like installing a software package or a bizarre problem with a job submission and have exhausted all the other options, you can try submitting a ticket to DART at helpdesk.pmacs.upenn.edu. Again they will best be able to help you if you give them all the relevant detail mentioned above."
   },
   {
+    "objectID": "rstudio.html",
+    "href": "rstudio.html",
+    "title": "RStudio Overview",
+    "section": "",
+    "text": "Although many programming languages exist, the Damrauer Lab primarily uses the R programming language for analyses. The RStudio development environment for R enables efficient coding, filesystem navigation, and creation of dynamic documents, presentations, and publications which can be easily shared among collaborators. There is also a rich ecosystem of publicly-available packages that enable reproducible execution of code/analyses.\nThe default RStudio environment is based on a Docker/Singularity container maintained on ghcr.io. This includes basic bioinformatics features for R from Bioconductor, as well as common packages from the Tidyverse and elsewhere."
+  },
+  {
     "objectID": "rstudio.html#accessing-rstudio-on-the-lpc",
     "href": "rstudio.html#accessing-rstudio-on-the-lpc",
     "title": "RStudio Overview",
@@ -105,24 +119,17 @@
     "text": "Package Management\nThe default RStudio container includes RStudio Server, Bioconductor, Tidyverse, and other common packages. If you need a package that isn’t pre-installed within the container, you can install a copy within your user directory using typical commands like: install.packages() and devtools::install_github()."
   },
   {
-    "objectID": "rstudio.html#links-and-resources",
-    "href": "rstudio.html#links-and-resources",
-    "title": "RStudio Overview",
-    "section": "Links and Resources",
-    "text": "Links and Resources\n\nRStudio Education\nR for Data Science\nIntroduction to Data Science"
-  },
-  {
-    "objectID": "rstudio.html",
-    "href": "rstudio.html",
-    "title": "RStudio Overview",
-    "section": "",
-    "text": "Although many programming languages exist, the Damrauer Lab primarily uses the R programming language for analyses. The RStudio development environment for R enables efficient coding, filesystem navigation, and creation of dynamic documents, presentations, and publications which can be easily shared among collaborators. There is also a rich ecosystem of publicly-available packages that enable reproducible execution of code/analyses.\nThe default RStudio environment is based on a Docker/Singularity container maintained on ghcr.io. This includes basic bioinformatics features for R from Bioconductor, as well as common packages from the Tidyverse and elsewhere."
-  },
-  {
     "objectID": "rstudio.html#singularity-images",
     "href": "rstudio.html#singularity-images",
     "title": "RStudio Overview",
     "section": "Singularity Images",
     "text": "Singularity Images\nThe Singularity image containing the default RStudio container is located at https://ghcr.io/mglev1n/bioconductor-tidyverse. To update the image, execute the following commands in the terminal:\n\nStart an interactive session: bsub -q damrauer_interactive -Is bash\nLoad the singularity module: module load singularity\nUse the singularity pull command to download the image:\n\nThe default lab image can be found on the Github Container Repository: singularity pull oras://ghcr.io/mglev1n/bioconductor-tidyverse:singularity-latest\nThe singularity pull command can more broadly be used to download Docker/Singularity images from places like ghcr.io or Docker Hub and convert them to singularity containers: singularity pull docker://ghcr.io/rocker-org/tidyverse:latest\n\nExit the interactive session using exit"
+  },
+  {
+    "objectID": "rstudio.html#links-and-resources",
+    "href": "rstudio.html#links-and-resources",
+    "title": "RStudio Overview",
+    "section": "Links and Resources",
+    "text": "Links and Resources\n\nRStudio Education\nR for Data Science\nIntroduction to Data Science"
   }
 ]
