@@ -110,5 +110,19 @@
     "title": "RStudio Overview",
     "section": "Links and Resources",
     "text": "Links and Resources\n\nRStudio Education\nR for Data Science\nIntroduction to Data Science"
+  },
+  {
+    "objectID": "rstudio.html",
+    "href": "rstudio.html",
+    "title": "RStudio Overview",
+    "section": "",
+    "text": "Although many programming languages exist, the Damrauer Lab primarily uses the R programming language for analyses. The RStudio development environment for R enables efficient coding, filesystem navigation, and creation of dynamic documents, presentations, and publications which can be easily shared among collaborators. There is also a rich ecosystem of publicly-available packages that enable reproducible execution of code/analyses.\nThe default RStudio environment is based on a Docker/Singularity container maintained on ghcr.io. This includes basic bioinformatics features for R from Bioconductor, as well as common packages from the Tidyverse and elsewhere."
+  },
+  {
+    "objectID": "rstudio.html#singularity-images",
+    "href": "rstudio.html#singularity-images",
+    "title": "RStudio Overview",
+    "section": "Singularity Images",
+    "text": "Singularity Images\nThe Singularity image containing the default RStudio container is located at https://ghcr.io/mglev1n/bioconductor-tidyverse. To update the image, execute the following commands in the terminal:\n\nStart an interactive session: bsub -q damrauer_interactive -Is bash\nLoad the singularity module: module load singularity\nUse the singularity pull command to download the image from the Github Container Repository: singularity pull oras://ghcr.io/mglev1n/bioconductor-tidyverse:singularity-latest\nExit the interactive session using exit"
   }
 ]
