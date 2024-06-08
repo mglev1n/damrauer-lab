@@ -1,149 +1,243 @@
 [
   {
-    "objectID": "lpc.html",
-    "href": "lpc.html",
-    "title": "LPC Overview",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Overview",
     "section": "",
-    "text": "The Damrauer Lab primarily uses the Penn LPC (Limited Performance Computing) environment for computing. This environment can be accessed from any computer on- or off-campus with the use of a VPN (virtual private network).\nThe overview below is adapted from the Moore lab and Ritchie lab."
-  },
-  {
-    "objectID": "lpc.html#links-and-resources",
-    "href": "lpc.html#links-and-resources",
-    "title": "LPC Overview",
-    "section": "Links and Resources",
-    "text": "Links and Resources\n\nPMACS Wiki - LPC\nPMACS Wiki - LSF Basics\nPMACS Wiki - Batch Computing"
-  },
-  {
-    "objectID": "lpc.html#getting-started-e.g.-new-students",
-    "href": "lpc.html#getting-started-e.g.-new-students",
-    "title": "LPC Overview",
-    "section": "Getting Started (e.g., new students)",
-    "text": "Getting Started (e.g., new students)\n\nStep 1: Get your PennKey and request LPC account access. If you don’t yet have a PennKey, please email medhelp@pennmedicine.upenn.edu to request one. Then, to create a user account, submit a ticket to the Systems queue at https://helpdesk.pmacs.upenn.edu/. You will be assigned an account username which will serve as the name of your home directory as well as be used to log onto the LPC.\nStep 2: Set up VPN for off campus LPC access. In order to connect on or off campus you will first need to connect to campus with a virtual private network (VPN).\n\nFirst, make sure you enroll in DUO Two-factor authentication. This is needed to access most online UPenn resources from off campus.\nNext install the Pulse Secure Software from DART. Detailed instructions can be found here.\n\n\nWhen each of these are complete, you should be able to log into the LPC using the instructions that follow. Note: You’ll need to log into the VPN prior to logging into LPC."
-  },
-  {
-    "objectID": "lpc.html#logging-into-the-lpc",
-    "href": "lpc.html#logging-into-the-lpc",
-    "title": "LPC Overview",
-    "section": "Logging into the LPC",
-    "text": "Logging into the LPC\nTo login to the LPC (and reach your home directory) you will need either a terminal program (i.e. command line) or (if preferred) a graphical user interface (GUI) program. These programs differ if you have Windows, Mac or Linux Machine. Please see the following link for your appropriate operating system and style of login: https://wiki.pmacs.upenn.edu/pub/LPC (Under ‘Login Software Installation’). A specific Windows example is provided later in this section. Once you have an appropriate program, you will use it to log on to a server (based on who you are affiliated with). This file server/host is a head node, from which you can navigate the LPC directories (including your home) and submit jobs.\nThe Damrauer Lab has its own server on LPC called roubaix, which can be used to run both interactive and batch jobs. To browse files on the LPC and to submit jobs, you will use the scisub7 host.\n\nscisub7 (scisub7.pmacs.upenn.edu) is the submit host, and is open to anyone with VPN access (SSH only – i.e. a secure remote login protocol). Be aware that scisub7 is a virtual host with limited computing power. It cannot be used to run intensive processes, but can be used to move files and submit jobs.\n\n\nLogging in from Linux/Mac Terminal:\nSSH is a secure login protocol which enables access between two computers. This protocol is commonly available on Linux and Mac operating systems, and can be accessed using the terminal. To login to scisub7, open a terminal window and execute the following command:\n\nssh username@scisub7.pmacs.upenn.edu\n\n\n\nLogging in from MacOS\nAs mentioned in the above section, while MacOS built-in terminal is sufficient for submitting jobs, the Cyberduck GUI can be helpful for navigating the file structure.\n\nUsing Cyberduck\n\nDownload Cyberduck\nEnsure you are connected to VPN via PulseSecure\nOpen Cyberduck\nSelect Open Connection on the top left\nIn this window, select SFTP (SSH File Transfer Protocol)\nEnter servername.pmacs.upenn.edu under 'Server'\nConfirm 'Port' = 22\nEnter your PMACS username and password\nClick Connect, and a GUI will open up allowing you to view the directory on the LPC (it should open you up to your home directory the first time logging on).\n\n\n\n\nLogging in from Windows\nIt is useful to install both the terminal and GUI software below. The terminal is best for submitting jobs and the GUI is best for navigating and managing the file hierarchy and copying files to and from the LPC. Modern Windows operating systems may have SSH natively enabled from the command line - first try following the instructions for Linux/Mac above.\n\nWindows (Terminal): PuTTY\nWindows (GUI): WinSCP\nWindows (All-in-One): MobaXterm\n\nLogging in with PuTTY: - Ensure you are connected to VPN via PulseSecure. - Open the putty .exe file - In the ‘Session’ window, enter scisub7.pmacs.upenn.edu under ‘Host Name’ - Confirm 'Port' = 22 and 'Connection type' = SSH - [For convenience] In the ‘Connection/Data’ window put the LPC username you were assigned into ‘auto-login username’ - [For convenience] Go back to the ‘Session’ window and type in any session ‘name’ into ‘Saved Sessions’. E.g. ‘LPC_damrauer’ - [For convenience] Click save, and this information will be available to be loaded your next time opening Putty - Make sure you session is loaded and click ‘Open’ at bottom of the window - A terminal will open up requesting your username (if you didn’t save it in step 5). - Lastly you will be prompted for your password.\nLogging in with WinSCP: - Ensure you are connected to VPN via PulseSecure. - Open WinSCP software - In the ‘Session’ window, enter servername.pmacs.upenn.edu under ‘Host Name’ - Confirm 'Port' = 22, 'Connection type' = SSH, and 'File protocol' = SFTP - Enter your username and password where indicated - [For convenience] Click Save and give your session any name for future use. - Click ‘Login’ to connect, and a GUI will open up allowing you to view both your local PC’s directory as well as the directory on the LPC (it should open you up to your home directory the first time logging on).\nNote that it is also possible to configure WinSCP to automatically open a putty terminal upon connection.\nLogging in with MobaXterm: - This is the PMACS preferred method to interact with LPC. - MobaXterm can be downloaded from https://mobaxterm.mobatek.net/, see https://mobaxterm.mobatek.net/documentation.html#2 for additional documentation - Please consult the instructions on the PMACS wiki for more details regardig usage and installation"
-  },
-  {
-    "objectID": "lpc.html#navigating-the-lpc-from-a-command-line",
-    "href": "lpc.html#navigating-the-lpc-from-a-command-line",
-    "title": "LPC Overview",
-    "section": "Navigating the LPC from a command line",
-    "text": "Navigating the LPC from a command line\nLinux commands are needed to navigate the LPC from a terminal (e.g. PuTTY). See the following link for an overview of basic Linux commands:\nhttps://wiki.pmacs.upenn.edu/pub/Linux_Basics\nSome of the most commonly used basic commands include:\n\nls (lists contents of current directory)\nls -a (lists contents of current directory including hidden files)\ncd somedirectory (move from current directory to ‘somedirectory’)\ncd .. (move back one level in the folder hierarchy towards the root folder)\nmkdir somedirectory (make a new directory called somedirectory)\nhead myfile.txt (show the beginning of a file)\n\nA great tutorial on how to effectively use a Unix command line is available at [https://missing.csail.mit.edu/](https://missing.csail.mit.edu/."
-  },
-  {
-    "objectID": "lpc.html#customizing-your-environment",
-    "href": "lpc.html#customizing-your-environment",
-    "title": "LPC Overview",
-    "section": "Customizing your environment",
-    "text": "Customizing your environment\nDepending on what you want to run on the LPC, you may need to install various applications, packages, programming language versions, etc. To avoid confusion and keep things centralized, PMACS installs and manages common applications in a shared central directory that are available to all the hosts in our cluster. The LPC terms these environmental elements as ‘modules’. Modules can be loaded or unloaded to be made available in your run environment. This means that these modules will be available if you were to run a program locally or when you submit a job from a given host. Terminal commands for working with modules are available at this link:\nhttps://wiki.pmacs.upenn.edu/pub/LPC#Modules\nAlternatively if some application or package is not available or (for some reason) can’t be installed by PMACS under modules, you can install such packages or applications in your home directory. Be advised that PMACS provides very limited (if any) support when loading or using such installations on your own."
-  },
-  {
-    "objectID": "lpc.html#using-queues",
-    "href": "lpc.html#using-queues",
-    "title": "LPC Overview",
-    "section": "Using queues",
-    "text": "Using queues\nThe first thing to understand before trying to schedule jobs are ‘queues’. At face value, a queue represents a set of pending jobs (i.e. a ‘container’ for jobs). On the LPC different queues are available to different user groups allowing them to run their jobs. You must be associated with, and have permission from, a specific user group in order to submit jobs to their associated queue. Each queue is set up by PMACS with their own set of rules, defaults, and access to specific execute hosts (i.e. the servers comprised of computing cores where individual jobs are run).\nThere are a few general queue types:\n\nnormal: For most non-interactive jobs. Typical non-interactive jobs can be accessed submitted to the damrauer_normal queue.\nlong: For long running jobs (more than 24 hr).\ninteractive: For jobs that are run interactively. Interactive jobs can be submitted to the damrauer_interactive queue.\n\nMore information on queues in general is available here:\nhttps://wiki.pmacs.upenn.edu/pub/LSF_Basics"
-  },
-  {
-    "objectID": "lpc.html#submitting-jobs",
-    "href": "lpc.html#submitting-jobs",
-    "title": "LPC Overview",
-    "section": "Submitting Jobs",
-    "text": "Submitting Jobs\nHigh performance parallel computing codes generally run in “batch” mode. Batch jobs are controlled by scripts written by the user and submitted to a batch system that manages the compute resource and schedules the job to run based on a set of policies. We use the term “job” to refer to a “batch job”.\nComputing ‘jobs’ can be submitted individually from the command line, or you can write and run an executable script to submit multiple jobs to a queue simultaneously.\nIBM’s LSF documentation is available here: https://www.ibm.com/support/knowledgecenter/en/SSWRJV_10.1.0/lsf_welcome/lsf_welcome.html\nAdditionally, if you are planning to submit a large number of resource intensive jobs, it is recommended to discuss first with other lab members to coordinate resource usage.\n\nSample job script\n#!/bin/bash\n#BSUB -J myjobname\n#BSUB -o outputfile.%J.out\n#BSUB -e errorfile.%J.err\n#BSUB -q damrauer_normal\n#BSUB -M 10000\nmodule add python/3.7\ncd /project/damrauer_shared/users/myhomedirectory\npython3.7 script.py -parA 0 -parB value\nAssuming this is saved to a file named script.sh or script.bsub, you can submit the job by running:\n$ bsub < script.sh\n$ bsub < script.bsub"
-  },
-  {
-    "objectID": "lpc.html#best-practices-miscellaneous-tips",
-    "href": "lpc.html#best-practices-miscellaneous-tips",
-    "title": "LPC Overview",
-    "section": "Best practices & Miscellaneous tips",
-    "text": "Best practices & Miscellaneous tips\nTo avoid accidental deletion or overwriting of files it is recommended that you put these aliases in your .bashrc:\n\nalias rm='rm -i'\nalias mv='mv -i'\nalias cp='cp -i'\n\nEach of these will prompt linux to ask you confirmation for the corresponding action.\nTo avoid filling up our disk space, plan to direct large job outputs and easily generated intermediate files to /project/scratch/. You can check the disk you are working on by using realpath . or pwd -P and the amount of space left by using df -h. Note that scratch space is not backed up, so you should not use it for long term storage of data that is near and dear to you!!!"
-  },
-  {
-    "objectID": "lpc.html#troubleshooting",
-    "href": "lpc.html#troubleshooting",
-    "title": "LPC Overview",
-    "section": "Troubleshooting",
-    "text": "Troubleshooting\nIf you have any question, you can first discuss with other lab members, or submit a ticket at https://helpdesk.pmacs.upenn.edu/\nIt’s also a good idea to provide your ip address when asking a question regarding connection: http://www.med.upenn.edu/myip."
-  },
-  {
-    "objectID": "lpc.html#lpc-commands-cheat-sheet",
-    "href": "lpc.html#lpc-commands-cheat-sheet",
-    "title": "LPC Overview",
-    "section": "LPC Commands Cheat Sheet",
-    "text": "LPC Commands Cheat Sheet\n\nLSF (job scheduling system) commands\n\n\n\nCommand\nDescription\n\n\n\n\nbjobs\nShow unfinished jobs\n\n\nbjobs -sum\nSummarize active jobs\n\n\nbjobs -u ryanurb\nShow jobs for user ryanurb\n\n\nbkill 12345\nKill job with ID 12345\n\n\nbkill 0\nKill all jobs that belong to you\n\n\nbhosts doi_exe\nShow server hosts\n\n\nbhosts\nShow all hosts\n\n\nbswitch\nSwitch a job to a different queue\n\n\n\nSome other LSF commands can be found here.\n\n\nPMACS software module commands\n\n\n\n\n\n\n\nCommand\nDescription\n\n\n\n\nmodule list\nList loaded modules\n\n\nmodule avail\nList all available modules\n\n\nmodule avail python\nList available python modules\n\n\nmodule load python/3.7\nLoads the module named python/3.7\n\n\nmodule unload python/2.7.10\nUnloads the module named python/2.7.10\n\n\nmodule switch gcc/4.9.4 gcc/6.2.0\nSwap out module gcc/4.9.4 for gcc/6.2.0 (useful for changing software versions)\n\n\n\n\n\nMiscellaneous commands\n\n\n\nCommand\nDescription\n\n\n\n\ndf -h\nGet current disk usage and total disk capacity\n\n\ndu -hs\nGet size of current directory\n\n\n\nPlease note that at the request of PMACS, du commands should be used sparingly to avoid catastrophic burden on the filesystem"
-  },
-  {
-    "objectID": "lpc.html#frequently-asked-questions",
-    "href": "lpc.html#frequently-asked-questions",
-    "title": "LPC Overview",
-    "section": "Frequently Asked Questions",
-    "text": "Frequently Asked Questions\n\nMy jobs have been stuck in the queue with PENDING status forever and I need them to start running!\nUnfortunately, if many other people are also running jobs, you may just have to wait your turn. You can check how many jobs are waiting in our queues using the command bjobs -u \"all\" | grep \"damrauer\"\nHowever, even if there are many jobs waiting, there are some ways that you might be able to reduce how long your job sits in the queue. Sometime people will request much more memory, walltime, and/or nodes than the job actually needs to run. Your job cannot start until the resources you request are available, so the more you request, potentially the longer it could take to start. If you have ran a similar job before, check the resource usage to see the max memory and time it took to run. You may be able to reduce your current resource requests based on what you find. Also make sure that the program or function you are running is actually able to take advantage of multiple nodes. For example, requesting 16 nodes to run an Rscript that you haven’t parallized will reserve 15 extra nodes for nothing.\nRemember if you are running an analysis that requires a lot of resources, it’s a good idea to post in #support-lpc with a summary of your compute needs and time it will take to complete so that all lab members can know and plan accordingly and make sure there are no deadline conflicts.\nI calculated how long my jobs will take to run on LPC and it is months of compute time!\nYou may ask Scott about possibly moving your analysis, or a portion or your analysis, to DNAnexus or the HPC (High Performance Computing cluster). If you want to use these resources to run an analysis, generally you will need to do some cost scoping to have a rough idea of the total compute costs before you submit.\nHow can I run the same job on a bunch of different input files or with a bunch of different parameters without creating a bsub script for each one?\nThis is a perfect scenario for subitting an array job! The array index is saved into a variable called LSB_JOBINDEX. Say you want to run bcftools norm for 3 chromosomes with in files named chr1.vcf, chr2.vcf, and chrX.vcf. You could make the following changes to your script\n#!/bin/bash\n#BSUB -J jobname[1-3]\n#other BSUB options as normal\n\n#job commands\nmyArray=(\"1\" \"2\" \"X\") \nmyValue=\"${myArray[${LSB_JOBINDEX} - 1]}\"  # to access each element in the array\nbcftools norm -m -any /path/to/file/chr${myValue}.vcf -Ou | bcftools view -Q 0.05:minor -c 20:minor -Ov > chr${myValue}\"_norm.vcf\"\nIf all of your chromosome file names contain integers, you could even simplify this to just using the LSB_JOBINDEX variable directly like\n#!/bin/bash\n#BSUB -J jobname[1-22]\n#other BSUB options as normal\n\n#job commands\nbcftools norm -m -any /path/to/file/chr${LSB_JOBINDEX}.vcf -Ou | bcftools view -Q 0.05:minor -c 20:minor -Ov > chr${LSB_JOBINDEX}\"_norm.vcf\"\nAnother tip is that you can also use a command to get the array. For example if you have a list of chr files called chr1.vcf etc., you can do something like\n#!/bin/bash\n#BSUB -J jobname[1-3]\n#other BSUB options as normal\n\n#job commands\nmyArray=(`ls -1 /path/to/input/files/chr*vcf`) # you can chain sed, cut, etc. commands here using pipes if you want to format the values in the array!\nmyValue=\"${myArray[${LSB_JOBINDEX} - 1]}\" \nbcftools norm -m -any ${myValue} -Ou | bcftools view -Q 0.05:minor -c 20:minor -Ov > ${myValue}\".norm.vcf\"\nMy job finished but it didn’t output anything. What happened?\nFirst, make sure you have enabled the options to get a resource summary emailed to you and to output the .err file. Commonly a few things could have happened.\n\nThe job produced an error of some sort and you will need to fix your script.\nThe job ran out of walltime or memory. You can look at the resource usage e-mail to see if this happened.\nThe job ran fine, but there was no disk space to write the output file. If you didn’t get any errors and the resource usage looks fine, you can check which disk you were writing the output file to using pwd -P and how much space is left on the disk using df -h. If there is limited space, you may need to either temporarily direct your output to a scratch disk or work with other lab members to move files around.\n\nI can’t get my R package to install.\nThere are a number of reasons why this may happen. If you get an error such as ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for [] the issue may be as simple as quitting the R session, loading a module for the library that you are getting an error about, and restarting R. gcc, boost, mpfr, and mpc are common offenders.\nLPC is running very slowly!\nFirst, you might want to check with others in the lab to see if they are experiencing similar issues and it’s not just a glitch or momentary network problem. You might also want to have a look at the current running processes using top. If you or someone else is running a resource intensive process from the log in node, it might be best to kill the process and start an ibash session.\nI’m getting an error or have a problem that wasn’t mentioned here and I don’t know what it means or how to fix it.\nWell the first thing we usually want to do in this case is the classic Google/StackOverflow combination. Most of the time, you probably haven’t broken something beyond repair and instead just found a common bug that has already been solved by many other people on the internet.\nIf Google doesn’t work, you may want to search for keywords from your error in the lab’s Slack to see if any other lab members have come across the problem before. If you can’t find it, you can discuss with other lab members. It is great practice to post the full error message along with the line of code or command that you were running. If you have a problem with a script another lab member wrote for you, it’s also great to provide a small, reproducible example that they can run and try to troubleshoot.\nLastly, if you are having an issue with something like installing a software package or a bizarre problem with a job submission and have exhausted all the other options, you can try submitting a ticket to DART at helpdesk.pmacs.upenn.edu. Again they will best be able to help you if you give them all the relevant detail mentioned above."
+    "text": "Last Updated: r Sys.Date()\nThis internal website for the Damrauer Lab at the University of Pennsylvania serves to coordinate and document common logistic and computational topics. This effort depends on contributions from users, so if you have edits to suggest, or documentation requests, please submit an Issue or Pull Request. This effort is inspired in part by PennLINC.",
+    "crumbs": [
+      "Overview"
+    ]
   },
   {
     "objectID": "rstudio.html",
     "href": "rstudio.html",
     "title": "RStudio Overview",
     "section": "",
-    "text": "Although many programming languages exist, the Damrauer Lab primarily uses the R programming language for analyses. The RStudio development environment for R enables efficient coding, filesystem navigation, and creation of dynamic documents, presentations, and publications which can be easily shared among collaborators. There is also a rich ecosystem of publicly-available packages that enable reproducible execution of code/analyses.\nThe default RStudio environment is based on a Docker/Singularity container maintained on ghcr.io. This includes basic bioinformatics features for R from Bioconductor, as well as common packages from the Tidyverse and elsewhere."
+    "text": "Although many programming languages exist, the Damrauer Lab primarily uses the R programming language for analyses. The RStudio development environment for R enables efficient coding, filesystem navigation, and creation of dynamic documents, presentations, and publications which can be easily shared among collaborators. There is also a rich ecosystem of publicly-available packages that enable reproducible execution of code/analyses.\nThe default RStudio environment is based on a Docker/Singularity container maintained on ghcr.io. This includes basic bioinformatics features for R from Bioconductor, as well as common packages from the Tidyverse and elsewhere.",
+    "crumbs": [
+      "Getting Started",
+      "RStudio Overview"
+    ]
   },
   {
     "objectID": "rstudio.html#accessing-rstudio-on-the-lpc",
     "href": "rstudio.html#accessing-rstudio-on-the-lpc",
     "title": "RStudio Overview",
     "section": "Accessing RStudio on the LPC",
-    "text": "Accessing RStudio on the LPC\n\nIf necessary (eg. off-campus) activate your VPN to join the PMACS network\nLogin to scisub7 using: ssh username@scisub7.pmacs.upenn.edu\nNavigate to the rstudio directory in the damrauer_shared project folder: cd /project/damrauer_shared/rstudio/\nExecute run_rstudio_ssh.sh to start an interactive rstudio session: ./run_rstudio_ssh.sh or bash run_rstudio_ssh.sh\n\nEach user can currently run one RStudio session at a time. Each session is created using a unique, job-specific password. The session can be accessed using any web browser. Once you execute the run_rstudio_ssh.sh command, you should see instructions for accessing your unique job. Sample instructions are reproduced below:\nStarting RStudio Server session with 1 core(s) and 16GB of RAM per core...\n\n1. Create an SSH tunnel from your local workstation to the server by executing the following command in a new terminal window:\n\n    ssh -N -L 8787:roubaix:8787 username@scisub7.pmacs.upenn.edu \n\n2. Navigate your web browser to:\n\n    http://localhost:8787 \n\n3. Login to RStudio Server using the following credentials:\n\n    user: username \n    password: password \n\nWhen finished using RStudio Server, terminate the job:\n\n1. Exit the RStudio Session (power button in the top right corner of the RStudio window)\n2. Issue the following command on the login node (scisub7.pmacs.upenn.edu):\n\n    bkill jobid"
+    "text": "Accessing RStudio on the LPC\n\nIf necessary (eg. off-campus) activate your VPN to join the PMACS network\nLogin to scisub7 using: ssh username@scisub7.pmacs.upenn.edu\nNavigate to the rstudio directory in the voltron project folder: cd /project/voltron/rstudio/\nExecute run_rstudio_ssh.sh to start an interactive rstudio session: ./run_rstudio_ssh.sh or bash run_rstudio_ssh.sh\n\nEach user can currently run one RStudio session at a time. Each session is created using a unique, job-specific password. The session can be accessed using any web browser. Once you execute the run_rstudio_ssh.sh command, you should see instructions for accessing your unique job. Sample instructions are reproduced below:\nStarting RStudio Server session with 1 core(s) and 16GB of RAM per core...\n\n1. Create an SSH tunnel from your local workstation to the server by executing the following command in a new terminal window:\n\n    ssh -N -L 8787:roubaix:8787 username@scisub7.pmacs.upenn.edu \n\n2. Navigate your web browser to:\n\n    http://localhost:8787 \n\n3. Login to RStudio Server using the following credentials:\n\n    user: username \n    password: password \n\nWhen finished using RStudio Server, terminate the job:\n\n1. Exit the RStudio Session (power button in the top right corner of the RStudio window)\n2. Issue the following command on the login node (scisub7.pmacs.upenn.edu):\n\n    bkill jobid",
+    "crumbs": [
+      "Getting Started",
+      "RStudio Overview"
+    ]
   },
   {
     "objectID": "rstudio.html#package-management",
     "href": "rstudio.html#package-management",
     "title": "RStudio Overview",
     "section": "Package Management",
-    "text": "Package Management\nThe default RStudio container includes RStudio Server, Bioconductor, Tidyverse, and other common packages. If you need a package that isn’t pre-installed within the container, you can install a copy within your user directory using typical commands like: install.packages() and devtools::install_github()."
+    "text": "Package Management\nThe default RStudio container includes RStudio Server, Bioconductor, Tidyverse, and other common packages. If you need a package that isn’t pre-installed within the container, you can install a copy within your user directory using typical commands like: install.packages() and devtools::install_github().",
+    "crumbs": [
+      "Getting Started",
+      "RStudio Overview"
+    ]
   },
   {
     "objectID": "rstudio.html#singularity-images",
     "href": "rstudio.html#singularity-images",
     "title": "RStudio Overview",
     "section": "Singularity Images",
-    "text": "Singularity Images\nThe Singularity image containing the default RStudio container is located at https://ghcr.io/mglev1n/bioconductor-tidyverse. To update the image, execute the following commands in the terminal:\n\nStart an interactive session: bsub -q damrauer_interactive -Is bash\nLoad the singularity module: module load singularity\nUse the singularity pull command to download the image:\n\nThe default lab image can be found on the Github Container Repository: singularity pull oras://ghcr.io/mglev1n/bioconductor-tidyverse:singularity-latest\nThe singularity pull command can more broadly be used to download Docker/Singularity images from places like ghcr.io or Docker Hub and convert them to singularity containers: singularity pull docker://ghcr.io/rocker-org/tidyverse:latest\n\nExit the interactive session using exit"
+    "text": "Singularity Images\nThe Singularity image containing the default RStudio container is located at https://ghcr.io/mglev1n/bioconductor-tidyverse. To update the image, execute the following commands in the terminal:\n\nStart an interactive session: bsub -q voltron_interactive -Is bash\nLoad the singularity module: module load singularity\nUse the singularity pull command to download the image:\n\nThe default lab image can be found on the Github Container Repository: singularity pull oras://ghcr.io/mglev1n/bioconductor-tidyverse:singularity-latest\nThe singularity pull command can more broadly be used to download Docker/Singularity images from places like ghcr.io or Docker Hub and convert them to singularity containers: singularity pull docker://ghcr.io/rocker-org/tidyverse:latest\n\nExit the interactive session using exit",
+    "crumbs": [
+      "Getting Started",
+      "RStudio Overview"
+    ]
   },
   {
     "objectID": "rstudio.html#links-and-resources",
     "href": "rstudio.html#links-and-resources",
     "title": "RStudio Overview",
     "section": "Links and Resources",
-    "text": "Links and Resources\n\nRStudio Education\nR for Data Science\nIntroduction to Data Science"
+    "text": "Links and Resources\n\nRStudio Education\nR for Data Science\nIntroduction to Data Science",
+    "crumbs": [
+      "Getting Started",
+      "RStudio Overview"
+    ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Overview",
+    "objectID": "lpc.html",
+    "href": "lpc.html",
+    "title": "LPC Overview",
     "section": "",
-    "text": "This internal website for the Damrauer Lab at the University of Pennsylvania serves to coordinate and document common logistic and computational topics. This effort depends on contributions from users, so if you have edits to suggest, or documentation requests, please submit an Issue or Pull Request. This effort is inspired in part by PennLINC."
+    "text": "The Damrauer Lab primarily uses the Penn LPC (Limited Performance Computing) environment for computing. This environment can be accessed from any computer on- or off-campus with the use of a VPN (virtual private network).\nThe overview below is adapted from the Moore lab and Ritchie lab.",
+    "crumbs": [
+      "Getting Started",
+      "LPC Overview"
+    ]
+  },
+  {
+    "objectID": "lpc.html#links-and-resources",
+    "href": "lpc.html#links-and-resources",
+    "title": "LPC Overview",
+    "section": "Links and Resources",
+    "text": "Links and Resources\n\nPMACS Wiki - LPC\nPMACS Wiki - LSF Basics\nPMACS Wiki - Batch Computing",
+    "crumbs": [
+      "Getting Started",
+      "LPC Overview"
+    ]
+  },
+  {
+    "objectID": "lpc.html#getting-started-e.g.-new-students",
+    "href": "lpc.html#getting-started-e.g.-new-students",
+    "title": "LPC Overview",
+    "section": "Getting Started (e.g., new students)",
+    "text": "Getting Started (e.g., new students)\n\nStep 1: Get your PennKey and request LPC account access. If you don’t yet have a PennKey, please email medhelp@pennmedicine.upenn.edu to request one. Then, to create a user account, submit a ticket to the Systems queue at https://helpdesk.pmacs.upenn.edu/. You will be assigned an account username which will serve as the name of your home directory as well as be used to log onto the LPC.\nStep 2: Set up VPN for off campus LPC access. In order to connect on or off campus you will first need to connect to campus with a virtual private network (VPN).\n\nFirst, make sure you enroll in DUO Two-factor authentication. This is needed to access most online UPenn resources from off campus.\nNext install the Pulse Secure Software from DART. Detailed instructions can be found here.\n\n\nWhen each of these are complete, you should be able to log into the LPC using the instructions that follow. Note: You’ll need to log into the VPN prior to logging into LPC.",
+    "crumbs": [
+      "Getting Started",
+      "LPC Overview"
+    ]
+  },
+  {
+    "objectID": "lpc.html#logging-into-the-lpc",
+    "href": "lpc.html#logging-into-the-lpc",
+    "title": "LPC Overview",
+    "section": "Logging into the LPC",
+    "text": "Logging into the LPC\nTo login to the LPC (and reach your home directory) you will need either a terminal program (i.e. command line) or (if preferred) a graphical user interface (GUI) program. These programs differ if you have Windows, Mac or Linux Machine. Please see the following link for your appropriate operating system and style of login: https://wiki.pmacs.upenn.edu/pub/LPC (Under ‘Login Software Installation’). A specific Windows example is provided later in this section. Once you have an appropriate program, you will use it to log on to a server (based on who you are affiliated with). This file server/host is a head node, from which you can navigate the LPC directories (including your home) and submit jobs.\nThe Damrauer Lab has its own server on LPC called roubaix, which can be used to run both interactive and batch jobs. To browse files on the LPC and to submit jobs, you will use the scisub7 host.\n\nscisub7 (scisub7.pmacs.upenn.edu) is the submit host, and is open to anyone with VPN access (SSH only – i.e. a secure remote login protocol). Be aware that scisub7 is a virtual host with limited computing power. It cannot be used to run intensive processes, but can be used to move files and submit jobs.\n\n\nLogging in from Linux/Mac Terminal:\nSSH is a secure login protocol which enables access between two computers. This protocol is commonly available on Linux and Mac operating systems, and can be accessed using the terminal. To login to scisub7, open a terminal window and execute the following command:\n\nssh username@scisub7.pmacs.upenn.edu\n\n\n\nLogging in from MacOS\nAs mentioned in the above section, while MacOS built-in terminal is sufficient for submitting jobs, the Cyberduck GUI can be helpful for navigating the file structure.\n\nUsing Cyberduck\n\nDownload Cyberduck\nEnsure you are connected to VPN via PulseSecure\nOpen Cyberduck\nSelect Open Connection on the top left\nIn this window, select SFTP (SSH File Transfer Protocol)\nEnter servername.pmacs.upenn.edu under 'Server'\nConfirm 'Port' = 22\nEnter your PMACS username and password\nClick Connect, and a GUI will open up allowing you to view the directory on the LPC (it should open you up to your home directory the first time logging on).\n\n\n\n\nLogging in from Windows\nIt is useful to install both the terminal and GUI software below. The terminal is best for submitting jobs and the GUI is best for navigating and managing the file hierarchy and copying files to and from the LPC. Modern Windows operating systems may have SSH natively enabled from the command line - first try following the instructions for Linux/Mac above.\n\nWindows (Terminal): PuTTY\nWindows (GUI): WinSCP\nWindows (All-in-One): MobaXterm\n\nLogging in with PuTTY: - Ensure you are connected to VPN via PulseSecure. - Open the putty .exe file - In the ‘Session’ window, enter scisub7.pmacs.upenn.edu under ‘Host Name’ - Confirm 'Port' = 22 and 'Connection type' = SSH - [For convenience] In the ‘Connection/Data’ window put the LPC username you were assigned into ‘auto-login username’ - [For convenience] Go back to the ‘Session’ window and type in any session ‘name’ into ‘Saved Sessions’. E.g. ‘LPC_damrauer’ - [For convenience] Click save, and this information will be available to be loaded your next time opening Putty - Make sure you session is loaded and click ‘Open’ at bottom of the window - A terminal will open up requesting your username (if you didn’t save it in step 5). - Lastly you will be prompted for your password.\nLogging in with WinSCP: - Ensure you are connected to VPN via PulseSecure. - Open WinSCP software - In the ‘Session’ window, enter servername.pmacs.upenn.edu under ‘Host Name’ - Confirm 'Port' = 22, 'Connection type' = SSH, and 'File protocol' = SFTP - Enter your username and password where indicated - [For convenience] Click Save and give your session any name for future use. - Click ‘Login’ to connect, and a GUI will open up allowing you to view both your local PC’s directory as well as the directory on the LPC (it should open you up to your home directory the first time logging on).\nNote that it is also possible to configure WinSCP to automatically open a putty terminal upon connection.\nLogging in with MobaXterm: - This is the PMACS preferred method to interact with LPC. - MobaXterm can be downloaded from https://mobaxterm.mobatek.net/, see https://mobaxterm.mobatek.net/documentation.html#2 for additional documentation - Please consult the instructions on the PMACS wiki for more details regardig usage and installation",
+    "crumbs": [
+      "Getting Started",
+      "LPC Overview"
+    ]
+  },
+  {
+    "objectID": "lpc.html#navigating-the-lpc-from-a-command-line",
+    "href": "lpc.html#navigating-the-lpc-from-a-command-line",
+    "title": "LPC Overview",
+    "section": "Navigating the LPC from a command line",
+    "text": "Navigating the LPC from a command line\nLinux commands are needed to navigate the LPC from a terminal (e.g. PuTTY). See the following link for an overview of basic Linux commands:\nhttps://wiki.pmacs.upenn.edu/pub/Linux_Basics\nSome of the most commonly used basic commands include:\n\nls (lists contents of current directory)\nls -a (lists contents of current directory including hidden files)\ncd somedirectory (move from current directory to ‘somedirectory’)\ncd .. (move back one level in the folder hierarchy towards the root folder)\nmkdir somedirectory (make a new directory called somedirectory)\nhead myfile.txt (show the beginning of a file)\n\nA great tutorial on how to effectively use a Unix command line is available at [https://missing.csail.mit.edu/](https://missing.csail.mit.edu/.",
+    "crumbs": [
+      "Getting Started",
+      "LPC Overview"
+    ]
+  },
+  {
+    "objectID": "lpc.html#customizing-your-environment",
+    "href": "lpc.html#customizing-your-environment",
+    "title": "LPC Overview",
+    "section": "Customizing your environment",
+    "text": "Customizing your environment\nDepending on what you want to run on the LPC, you may need to install various applications, packages, programming language versions, etc. To avoid confusion and keep things centralized, PMACS installs and manages common applications in a shared central directory that are available to all the hosts in our cluster. The LPC terms these environmental elements as ‘modules’. Modules can be loaded or unloaded to be made available in your run environment. This means that these modules will be available if you were to run a program locally or when you submit a job from a given host. Terminal commands for working with modules are available at this link:\nhttps://wiki.pmacs.upenn.edu/pub/LPC#Modules\nAlternatively if some application or package is not available or (for some reason) can’t be installed by PMACS under modules, you can install such packages or applications in your home directory. Be advised that PMACS provides very limited (if any) support when loading or using such installations on your own.",
+    "crumbs": [
+      "Getting Started",
+      "LPC Overview"
+    ]
+  },
+  {
+    "objectID": "lpc.html#using-queues",
+    "href": "lpc.html#using-queues",
+    "title": "LPC Overview",
+    "section": "Using queues",
+    "text": "Using queues\nThe first thing to understand before trying to schedule jobs are ‘queues’. At face value, a queue represents a set of pending jobs (i.e. a ‘container’ for jobs). On the LPC different queues are available to different user groups allowing them to run their jobs. You must be associated with, and have permission from, a specific user group in order to submit jobs to their associated queue. Each queue is set up by PMACS with their own set of rules, defaults, and access to specific execute hosts (i.e. the servers comprised of computing cores where individual jobs are run).\nThere are a few general queue types:\n\nnormal: For most non-interactive jobs. Typical non-interactive jobs can be accessed submitted to the damrauer_normal queue.\nlong: For long running jobs (more than 24 hr).\ninteractive: For jobs that are run interactively. Interactive jobs can be submitted to the damrauer_interactive queue.\n\nMore information on queues in general is available here:\nhttps://wiki.pmacs.upenn.edu/pub/LSF_Basics",
+    "crumbs": [
+      "Getting Started",
+      "LPC Overview"
+    ]
+  },
+  {
+    "objectID": "lpc.html#submitting-jobs",
+    "href": "lpc.html#submitting-jobs",
+    "title": "LPC Overview",
+    "section": "Submitting Jobs",
+    "text": "Submitting Jobs\nHigh performance parallel computing codes generally run in “batch” mode. Batch jobs are controlled by scripts written by the user and submitted to a batch system that manages the compute resource and schedules the job to run based on a set of policies. We use the term “job” to refer to a “batch job”.\nComputing ‘jobs’ can be submitted individually from the command line, or you can write and run an executable script to submit multiple jobs to a queue simultaneously.\nIBM’s LSF documentation is available here: https://www.ibm.com/support/knowledgecenter/en/SSWRJV_10.1.0/lsf_welcome/lsf_welcome.html\nAdditionally, if you are planning to submit a large number of resource intensive jobs, it is recommended to discuss first with other lab members to coordinate resource usage.\n\nSample job script\n#!/bin/bash\n#BSUB -J myjobname\n#BSUB -o outputfile.%J.out\n#BSUB -e errorfile.%J.err\n#BSUB -q damrauer_normal\n#BSUB -M 10000\nmodule add python/3.7\ncd /project/damrauer_shared/users/myhomedirectory\npython3.7 script.py -parA 0 -parB value\nAssuming this is saved to a file named script.sh or script.bsub, you can submit the job by running:\n$ bsub &lt; script.sh\n$ bsub &lt; script.bsub",
+    "crumbs": [
+      "Getting Started",
+      "LPC Overview"
+    ]
+  },
+  {
+    "objectID": "lpc.html#best-practices-miscellaneous-tips",
+    "href": "lpc.html#best-practices-miscellaneous-tips",
+    "title": "LPC Overview",
+    "section": "Best practices & Miscellaneous tips",
+    "text": "Best practices & Miscellaneous tips\nTo avoid accidental deletion or overwriting of files it is recommended that you put these aliases in your .bashrc:\n\nalias rm='rm -i'\nalias mv='mv -i'\nalias cp='cp -i'\n\nEach of these will prompt linux to ask you confirmation for the corresponding action.\nTo avoid filling up our disk space, plan to direct large job outputs and easily generated intermediate files to /project/scratch/. You can check the disk you are working on by using realpath . or pwd -P and the amount of space left by using df -h. Note that scratch space is not backed up, so you should not use it for long term storage of data that is near and dear to you!!!",
+    "crumbs": [
+      "Getting Started",
+      "LPC Overview"
+    ]
+  },
+  {
+    "objectID": "lpc.html#troubleshooting",
+    "href": "lpc.html#troubleshooting",
+    "title": "LPC Overview",
+    "section": "Troubleshooting",
+    "text": "Troubleshooting\nIf you have any question, you can first discuss with other lab members, or submit a ticket at https://helpdesk.pmacs.upenn.edu/\nIt’s also a good idea to provide your ip address when asking a question regarding connection: http://www.med.upenn.edu/myip.",
+    "crumbs": [
+      "Getting Started",
+      "LPC Overview"
+    ]
+  },
+  {
+    "objectID": "lpc.html#lpc-commands-cheat-sheet",
+    "href": "lpc.html#lpc-commands-cheat-sheet",
+    "title": "LPC Overview",
+    "section": "LPC Commands Cheat Sheet",
+    "text": "LPC Commands Cheat Sheet\n\nLSF (job scheduling system) commands\n\n\n\nCommand\nDescription\n\n\n\n\nbjobs\nShow unfinished jobs\n\n\nbjobs -sum\nSummarize active jobs\n\n\nbjobs -u ryanurb\nShow jobs for user ryanurb\n\n\nbkill 12345\nKill job with ID 12345\n\n\nbkill 0\nKill all jobs that belong to you\n\n\nbhosts doi_exe\nShow server hosts\n\n\nbhosts\nShow all hosts\n\n\nbswitch\nSwitch a job to a different queue\n\n\n\nSome other LSF commands can be found here.\n\n\nPMACS software module commands\n\n\n\n\n\n\n\nCommand\nDescription\n\n\n\n\nmodule list\nList loaded modules\n\n\nmodule avail\nList all available modules\n\n\nmodule avail python\nList available python modules\n\n\nmodule load python/3.7\nLoads the module named python/3.7\n\n\nmodule unload python/2.7.10\nUnloads the module named python/2.7.10\n\n\nmodule switch gcc/4.9.4 gcc/6.2.0\nSwap out module gcc/4.9.4 for gcc/6.2.0 (useful for changing software versions)\n\n\n\n\n\nMiscellaneous commands\n\n\n\nCommand\nDescription\n\n\n\n\ndf -h\nGet current disk usage and total disk capacity\n\n\ndu -hs\nGet size of current directory\n\n\n\nPlease note that at the request of PMACS, du commands should be used sparingly to avoid catastrophic burden on the filesystem",
+    "crumbs": [
+      "Getting Started",
+      "LPC Overview"
+    ]
+  },
+  {
+    "objectID": "lpc.html#frequently-asked-questions",
+    "href": "lpc.html#frequently-asked-questions",
+    "title": "LPC Overview",
+    "section": "Frequently Asked Questions",
+    "text": "Frequently Asked Questions\n\nMy jobs have been stuck in the queue with PENDING status forever and I need them to start running!\nUnfortunately, if many other people are also running jobs, you may just have to wait your turn. You can check how many jobs are waiting in our queues using the command bjobs -u \"all\" | grep \"damrauer\"\nHowever, even if there are many jobs waiting, there are some ways that you might be able to reduce how long your job sits in the queue. Sometime people will request much more memory, walltime, and/or nodes than the job actually needs to run. Your job cannot start until the resources you request are available, so the more you request, potentially the longer it could take to start. If you have ran a similar job before, check the resource usage to see the max memory and time it took to run. You may be able to reduce your current resource requests based on what you find. Also make sure that the program or function you are running is actually able to take advantage of multiple nodes. For example, requesting 16 nodes to run an Rscript that you haven’t parallized will reserve 15 extra nodes for nothing.\nRemember if you are running an analysis that requires a lot of resources, it’s a good idea to post in #support-lpc with a summary of your compute needs and time it will take to complete so that all lab members can know and plan accordingly and make sure there are no deadline conflicts.\nI calculated how long my jobs will take to run on LPC and it is months of compute time!\nYou may ask Scott about possibly moving your analysis, or a portion or your analysis, to DNAnexus or the HPC (High Performance Computing cluster). If you want to use these resources to run an analysis, generally you will need to do some cost scoping to have a rough idea of the total compute costs before you submit.\nHow can I run the same job on a bunch of different input files or with a bunch of different parameters without creating a bsub script for each one?\nThis is a perfect scenario for subitting an array job! The array index is saved into a variable called LSB_JOBINDEX. Say you want to run bcftools norm for 3 chromosomes with in files named chr1.vcf, chr2.vcf, and chrX.vcf. You could make the following changes to your script\n#!/bin/bash\n#BSUB -J jobname[1-3]\n#other BSUB options as normal\n\n#job commands\nmyArray=(\"1\" \"2\" \"X\") \nmyValue=\"${myArray[${LSB_JOBINDEX} - 1]}\"  # to access each element in the array\nbcftools norm -m -any /path/to/file/chr${myValue}.vcf -Ou | bcftools view -Q 0.05:minor -c 20:minor -Ov &gt; chr${myValue}\"_norm.vcf\"\nIf all of your chromosome file names contain integers, you could even simplify this to just using the LSB_JOBINDEX variable directly like\n#!/bin/bash\n#BSUB -J jobname[1-22]\n#other BSUB options as normal\n\n#job commands\nbcftools norm -m -any /path/to/file/chr${LSB_JOBINDEX}.vcf -Ou | bcftools view -Q 0.05:minor -c 20:minor -Ov &gt; chr${LSB_JOBINDEX}\"_norm.vcf\"\nAnother tip is that you can also use a command to get the array. For example if you have a list of chr files called chr1.vcf etc., you can do something like\n#!/bin/bash\n#BSUB -J jobname[1-3]\n#other BSUB options as normal\n\n#job commands\nmyArray=(`ls -1 /path/to/input/files/chr*vcf`) # you can chain sed, cut, etc. commands here using pipes if you want to format the values in the array!\nmyValue=\"${myArray[${LSB_JOBINDEX} - 1]}\" \nbcftools norm -m -any ${myValue} -Ou | bcftools view -Q 0.05:minor -c 20:minor -Ov &gt; ${myValue}\".norm.vcf\"\nMy job finished but it didn’t output anything. What happened?\nFirst, make sure you have enabled the options to get a resource summary emailed to you and to output the .err file. Commonly a few things could have happened.\n\nThe job produced an error of some sort and you will need to fix your script.\nThe job ran out of walltime or memory. You can look at the resource usage e-mail to see if this happened.\nThe job ran fine, but there was no disk space to write the output file. If you didn’t get any errors and the resource usage looks fine, you can check which disk you were writing the output file to using pwd -P and how much space is left on the disk using df -h. If there is limited space, you may need to either temporarily direct your output to a scratch disk or work with other lab members to move files around.\n\nI can’t get my R package to install.\nThere are a number of reasons why this may happen. If you get an error such as ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for [] the issue may be as simple as quitting the R session, loading a module for the library that you are getting an error about, and restarting R. gcc, boost, mpfr, and mpc are common offenders.\nLPC is running very slowly!\nFirst, you might want to check with others in the lab to see if they are experiencing similar issues and it’s not just a glitch or momentary network problem. You might also want to have a look at the current running processes using top. If you or someone else is running a resource intensive process from the log in node, it might be best to kill the process and start an ibash session.\nI’m getting an error or have a problem that wasn’t mentioned here and I don’t know what it means or how to fix it.\nWell the first thing we usually want to do in this case is the classic Google/StackOverflow combination. Most of the time, you probably haven’t broken something beyond repair and instead just found a common bug that has already been solved by many other people on the internet.\nIf Google doesn’t work, you may want to search for keywords from your error in the lab’s Slack to see if any other lab members have come across the problem before. If you can’t find it, you can discuss with other lab members. It is great practice to post the full error message along with the line of code or command that you were running. If you have a problem with a script another lab member wrote for you, it’s also great to provide a small, reproducible example that they can run and try to troubleshoot.\nLastly, if you are having an issue with something like installing a software package or a bizarre problem with a job submission and have exhausted all the other options, you can try submitting a ticket to DART at helpdesk.pmacs.upenn.edu. Again they will best be able to help you if you give them all the relevant detail mentioned above.",
+    "crumbs": [
+      "Getting Started",
+      "LPC Overview"
+    ]
   },
   {
     "objectID": "tools.html",
     "href": "tools.html",
     "title": "Useful Tools/Functions",
     "section": "",
-    "text": "METAL is an efficient tool for performing meta-analysis of genome-wide association studies.\n\n\n\nPlink is a useful toolkit for manipulating genomic data and performing genetic association studies.\n\n\n\nregenie is a useful program for efficiently performing both common- and rare-variant genetic association studies using biobank-scale data.\n\n\n\nSAIGE is a computationally efficient tool for performing biobank-scale genetic association studies, using generalized mixed models to account for relatedness/population stratification. SAIGE-GENE+ can be used for performing rare variant association studies."
+    "text": "METAL is an efficient tool for performing meta-analysis of genome-wide association studies.\n\n\n\nPlink is a useful toolkit for manipulating genomic data and performing genetic association studies.\n\n\n\nregenie is a useful program for efficiently performing both common- and rare-variant genetic association studies using biobank-scale data.\n\n\n\nSAIGE is a computationally efficient tool for performing biobank-scale genetic association studies, using generalized mixed models to account for relatedness/population stratification. SAIGE-GENE+ can be used for performing rare variant association studies.",
+    "crumbs": [
+      "Getting Started",
+      "Useful Tools/Functions"
+    ]
+  },
+  {
+    "objectID": "tools.html#useful-tools",
+    "href": "tools.html#useful-tools",
+    "title": "Useful Tools/Functions",
+    "section": "",
+    "text": "METAL is an efficient tool for performing meta-analysis of genome-wide association studies.\n\n\n\nPlink is a useful toolkit for manipulating genomic data and performing genetic association studies.\n\n\n\nregenie is a useful program for efficiently performing both common- and rare-variant genetic association studies using biobank-scale data.\n\n\n\nSAIGE is a computationally efficient tool for performing biobank-scale genetic association studies, using generalized mixed models to account for relatedness/population stratification. SAIGE-GENE+ can be used for performing rare variant association studies.",
+    "crumbs": [
+      "Getting Started",
+      "Useful Tools/Functions"
+    ]
   },
   {
     "objectID": "tools.html#useful-r-packages",
     "href": "tools.html#useful-r-packages",
     "title": "Useful Tools/Functions",
     "section": "Useful R Packages",
-    "text": "Useful R Packages\n\narrow\nThe arrow package is a cross-language platform for reading/writing data. This package can read/write from several formats including parquet, feather, csv, and tsv, as well as cloud-storage like Amazon S3. Parquet in particular is a highly efficient columnar data format. arrow enables users to rapidly query massive datasets (potentially spread across multiple files) that are larger-than-memory.\n\n\ndata.table\nThe data.table package is a high-performance package for reading and manipulating data.frames. The syntax can be confusing at first, but enables efficient manipulation of large dataframes.\n\n\ndtplyr\nThe dtplyr package allows users to use data.table as a backend for dplyr. This combination of tools allows the user to specify dataframe manipulations using the convenient dplyr syntax, while taking advantage of the efficiency of data.table.\n\n\nGenomicSEM\nThe GenomicSEM package allows users to perform several tasks, including:\n\nMultivariate LD-score regression\nCreate structural equation models using GWAS summary statistics\nConduct multi-trait/multivariate GWAS\n\n\n\nGWASinspector\nThe GWASinspector package is useful for performing quality control of genome-wide association studies before performing meta-analysis. The package takes a set of input GWAS and returns a set of cleaned/harmonized files ready for meta-analysis.\n\n\nieugwasr\nThe ieugwasr package allows users to query the MRC-IEU OpenGWAS Project.\n\n\nlocusplotr\nThe locusplotr package allows users to query the University of Michigan LocusZoom API to create regional association plots from GWAS summary statistics.\n\n\npatchwork\nThe patchwork package allows users to combine multiple ggplots into a single graphic. This is useful for generating figures for manuscripts.\n\n\ntidyverse\nThe tidyverse is a suite of packages that are generally useful for data science, and includes packages for:\n\ndplyr - Manipulating data\nggplot2 - Plotting data\ntidyr - Tidying data\nreadr - Read rectangular data (.csv, .tsv, etc.)\n\n\n\nTwoSampleMR\nThe TwoSampleMR package from the MRC-IEU provides tools for performing Mendelian randomization, including:\n\nQuerying the MRC-IEU OpenGWAS Project\nPerforming two-sample Mendelian Randomziation\nPerforming MR sensitivity analyses\nClumping variants based on linkage disequilibrium and p-value"
+    "text": "Useful R Packages\n\narrow\nThe arrow package is a cross-language platform for reading/writing data. This package can read/write from several formats including parquet, feather, csv, and tsv, as well as cloud-storage like Amazon S3. Parquet in particular is a highly efficient columnar data format. arrow enables users to rapidly query massive datasets (potentially spread across multiple files) that are larger-than-memory.\n\n\ndata.table\nThe data.table package is a high-performance package for reading and manipulating data.frames. The syntax can be confusing at first, but enables efficient manipulation of large dataframes.\n\n\ndtplyr\nThe dtplyr package allows users to use data.table as a backend for dplyr. This combination of tools allows the user to specify dataframe manipulations using the convenient dplyr syntax, while taking advantage of the efficiency of data.table.\n\n\nGenomicSEM\nThe GenomicSEM package allows users to perform several tasks, including:\n\nMultivariate LD-score regression\nCreate structural equation models using GWAS summary statistics\nConduct multi-trait/multivariate GWAS\n\n\n\nGWASinspector\nThe GWASinspector package is useful for performing quality control of genome-wide association studies before performing meta-analysis. The package takes a set of input GWAS and returns a set of cleaned/harmonized files ready for meta-analysis.\n\n\nieugwasr\nThe ieugwasr package allows users to query the MRC-IEU OpenGWAS Project.\n\n\nlocusplotr\nThe locusplotr package allows users to query the University of Michigan LocusZoom API to create regional association plots from GWAS summary statistics.\n\n\npatchwork\nThe patchwork package allows users to combine multiple ggplots into a single graphic. This is useful for generating figures for manuscripts.\n\n\ntidyverse\nThe tidyverse is a suite of packages that are generally useful for data science, and includes packages for:\n\ndplyr - Manipulating data\nggplot2 - Plotting data\ntidyr - Tidying data\nreadr - Read rectangular data (.csv, .tsv, etc.)\n\n\n\nTwoSampleMR\nThe TwoSampleMR package from the MRC-IEU provides tools for performing Mendelian randomization, including:\n\nQuerying the MRC-IEU OpenGWAS Project\nPerforming two-sample Mendelian Randomziation\nPerforming MR sensitivity analyses\nClumping variants based on linkage disequilibrium and p-value",
+    "crumbs": [
+      "Getting Started",
+      "Useful Tools/Functions"
+    ]
   },
   {
     "objectID": "tools.html#useful-r-functions",
     "href": "tools.html#useful-r-functions",
     "title": "Useful Tools/Functions",
     "section": "Useful R Functions",
-    "text": "Useful R Functions\n\nliftover_gwas()\nThe liftover_gwas() function from the GwasDataImport package is a wrapper for the rtracklayer::liftOver() function. liftover_gwas() can be used to convert genomic positions from an arbitrary dataframe containing columns for chromosome and position.\n\n\nphewas()\nThe phewas() function from the ieugwasr can be used to perform a phenome-wide association study for a genetic variant of interest across studies cataloged in the MRC-IEU OpenGWAS Project."
+    "text": "Useful R Functions\n\nliftover_gwas()\nThe liftover_gwas() function from the GwasDataImport package is a wrapper for the rtracklayer::liftOver() function. liftover_gwas() can be used to convert genomic positions from an arbitrary dataframe containing columns for chromosome and position.\n\n\nphewas()\nThe phewas() function from the ieugwasr can be used to perform a phenome-wide association study for a genetic variant of interest across studies cataloged in the MRC-IEU OpenGWAS Project.",
+    "crumbs": [
+      "Getting Started",
+      "Useful Tools/Functions"
+    ]
   }
 ]

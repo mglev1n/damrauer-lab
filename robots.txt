@@ -1,1 +1,1 @@
-Sitemap: https://github.com/mglev1n/damrauer-lab/sitemap.xml
+Sitemap: https://mglev1n.github.io/damrauer-lab/sitemap.xml
