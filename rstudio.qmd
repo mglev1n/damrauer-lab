@@ -9,7 +9,7 @@ The default RStudio environment is based on a Docker/Singularity container maint
 ## Accessing RStudio on the LPC
 1. If necessary (eg. off-campus) activate your VPN to join the PMACS network
 1. Login to `scisub7` using: `ssh username@scisub7.pmacs.upenn.edu`
-1. Navigate to the `rstudio` directory in the `damrauer_shared` project folder: `cd /project/damrauer_shared/rstudio/`
+1. Navigate to the `rstudio` directory in the `voltron` project folder: `cd /project/voltron/rstudio/`
 1. Execute `run_rstudio_ssh.sh` to start an interactive rstudio session: `./run_rstudio_ssh.sh` or `bash run_rstudio_ssh.sh`
 
 Each user can currently run one RStudio session at a time. Each session is created using a unique, job-specific password. The session can be accessed using any web browser. Once you execute the `run_rstudio_ssh.sh` command, you should see instructions for accessing your unique job. Sample instructions are reproduced below:
@@ -44,7 +44,7 @@ The default RStudio container includes RStudio Server, Bioconductor, Tidyverse, 
 ## Singularity Images
 The Singularity image containing the default RStudio container is located at [https://ghcr.io/mglev1n/bioconductor-tidyverse](https://ghcr.io/mglev1n/bioconductor-tidyverse). To update the image, execute the following commands in the terminal:
 
-1. Start an interactive session: `bsub -q damrauer_interactive -Is bash`
+1. Start an interactive session: `bsub -q voltron_interactive -Is bash`
 
 
 1. Load the singularity module: `module load singularity`
