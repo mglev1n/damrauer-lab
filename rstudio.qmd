@@ -8,7 +8,7 @@ The default RStudio environment is based on a Docker/Singularity container maint
 
 ## Accessing RStudio on the LPC
 1. If necessary (eg. off-campus) activate your VPN to join the PMACS network
-1. Login to `scisub7` using: `ssh username@scisub7.pmacs.upenn.edu`
+1. Login to `scisub9` using: `ssh username@scisub9.pmacs.upenn.edu`
 1. Navigate to the `rstudio` directory in the `voltron` project folder: `cd /project/voltron/rstudio/`
 1. Execute `run_rstudio_ssh.sh` to start an interactive rstudio session: `./run_rstudio_ssh.sh` or `bash run_rstudio_ssh.sh`
 
@@ -19,7 +19,7 @@ Starting RStudio Server session with 1 core(s) and 16GB of RAM per core...
 
 1. Create an SSH tunnel from your local workstation to the server by executing the following command in a new terminal window:
 
-    ssh -N -L 8787:roubaix:8787 username@scisub7.pmacs.upenn.edu 
+    ssh -N -L 8787:roubaix:8787 username@scisub9.pmacs.upenn.edu 
 
 2. Navigate your web browser to:
 
@@ -33,7 +33,7 @@ Starting RStudio Server session with 1 core(s) and 16GB of RAM per core...
 When finished using RStudio Server, terminate the job:
 
 1. Exit the RStudio Session (power button in the top right corner of the RStudio window)
-2. Issue the following command on the login node (scisub7.pmacs.upenn.edu):
+2. Issue the following command on the login node (scisub9.pmacs.upenn.edu):
 
     bkill jobid
 ```

@@ -4,6 +4,12 @@ project:
 execute:
   freeze: auto
 website:
+  announcement:
+    icon: info-circle
+    dismissable: false
+    type: warning
+    position: below-navbar
+    content: "**This wiki is archived and no longer updated.** Levin Lab members: see [wiki.levin-lab.org](https://wiki.levin-lab.org)."
   title: "Damrauer Lab"
   page-navigation: true
   favicon: "favicon_io/apple-touch-icon.png"

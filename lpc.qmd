@@ -29,15 +29,15 @@ To login to the LPC (and reach your home directory) you will need either a termi
 A specific Windows example is provided later in this section.
 Once you have an appropriate program, you will use it to log on to a server (based on who you are affiliated with). This file server/host is a head node, from which you can navigate the LPC directories (including your home) and submit jobs.  
 
-The Damrauer Lab has its own server on LPC called *roubaix*, which can be used to run both interactive and batch jobs. To browse files on the LPC and to submit jobs, you will use the `scisub7` host.
+The Damrauer Lab has its own server on LPC called *roubaix*, which can be used to run both interactive and batch jobs. To browse files on the LPC and to submit jobs, you will use the `scisub9` host.
 
-- `scisub7` (`scisub7.pmacs.upenn.edu`) is the submit host, and is open to anyone with VPN access (SSH only – i.e. a secure remote login protocol). Be aware that `scisub7` is a virtual host with limited computing power. It cannot be used to run intensive processes, but can be used to move files and submit jobs.
+- `scisub9` (`scisub9.pmacs.upenn.edu`) is the submit host, and is open to anyone with VPN access (SSH only – i.e. a secure remote login protocol). Be aware that `scisub9` is a virtual host with limited computing power. It cannot be used to run intensive processes, but can be used to move files and submit jobs.
 
 
 ### Logging in from Linux/Mac Terminal:
-SSH is a secure login protocol which enables access between two computers. This protocol is commonly available on Linux and Mac operating systems, and can be accessed using the terminal. To login to `scisub7`, open a terminal window and execute the following command:
+SSH is a secure login protocol which enables access between two computers. This protocol is commonly available on Linux and Mac operating systems, and can be accessed using the terminal. To login to `scisub9`, open a terminal window and execute the following command:
 
-- `ssh username@scisub7.pmacs.upenn.edu`
+- `ssh username@scisub9.pmacs.upenn.edu`
 
 ### Logging in from MacOS
 
@@ -66,7 +66,7 @@ The terminal is best for submitting jobs and the GUI is best for navigating and 
 **Logging in with PuTTY:**
 - Ensure you are connected to VPN via PulseSecure.
 - Open the putty .exe file
-- In the 'Session' window, enter `scisub7.pmacs.upenn.edu` under 'Host Name'
+- In the 'Session' window, enter `scisub9.pmacs.upenn.edu` under 'Host Name'
 - Confirm `'Port' = 22` and `'Connection type' = SSH`
 - [For convenience] In the 'Connection/Data' window put the LPC username you were assigned into 'auto-login username'
 - [For convenience] Go back to the 'Session' window and type in any session 'name' into 'Saved Sessions'. E.g. 'LPC_damrauer'

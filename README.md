@@ -1,8 +1,5 @@
+# Damrauer Lab wiki (archived)
 
-# damrauer-lab
+This site is no longer updated. The lab wiki has moved to https://wiki.levin-lab.org (source: https://github.com/mglev1n/levin-lab-wiki).
 
-<!-- badges: start -->
-<!-- badges: end -->
-
-This repo hosts documentation for the Damrauer Lab at the University of Pennsylvania, and can be accessed at [https://mglev1n.github.io/damrauer-lab](https://mglev1n.github.io/damrauer-lab)
-
+The old pages remain at https://www.levin-lab.org/damrauer-lab/ for reference.
